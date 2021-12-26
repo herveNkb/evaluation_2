@@ -1,0 +1,17 @@
+/*BASE*/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(178,228,219);
+  background: linear-gradient(
+    90deg,
+    rgba(178, 228, 219, 0.5998774509803921) 0%,
+    rgba(176, 198, 206, 1) 26%,
+    rgba(147, 139, 161, 1) 100%
+  );
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}

@@ -1,0 +1,10 @@
+/*BASE*/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b2e4db;
+  background: linear-gradient(90deg, rgba(178, 228, 219, 0.599877) 0%, #b0c6ce 26%, #938ba1 100%); }
+
+img {
+  height: auto;
+  max-width: 100%; }
