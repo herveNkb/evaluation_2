@@ -1,17 +1,19 @@
-/* Main colors */
+/* lorem */
 $blue500: #B2E4DB;
-$blueGrey200: #B0C6CE;
-$purpleGrey600: #938BA1;
-
+/* Rule color */
+$grey: #C4C4C4;
+/* card player not playing */
+$blueGrey200: rgba(176, 198, 206, 0.45);
+/* card player playing */
+$blueGrey210: rgba(176, 198, 206, 0.9);
+/* Background smartphone */
+$purpleGrey600: rgba(147, 139, 161, 0.58);
 /* Player informations colors */
-$purple200: #3836A9;
+$purple200: rgba(56, 54, 169, 0.17);
+/* Player playing */
+$purple210: rgba(56, 54, 169, 0.25);
 $red500: #B76161;
 $red300: #D96C6C;
 $pink200: #BE9999;
-
-/* Rule color */
-$grey: #C4C4C4;
-
 /* Fonts colors */
 $white: #FFFFFF;
-$black: #000000;
