@@ -1,5 +1,6 @@
+@charset "UTF-8";
 /* Colors and font-size */
-/* lorem */
+/* Ordered color */
 /* Rule color */
 /* card player not playing */
 /* card player playing */
@@ -23,39 +24,43 @@ img {
 
 /* Mobile-first */
 h1 {
-  font-size: 20px;
+  font-size: 1.25em;
   text-align: center;
   margin-top: 5px;
-  margin-bottom: 0; }
+  /* Margin à optimiser */
+  margin-bottom: 20px; }
 
 #rule {
   width: 40px;
   line-height: 40px;
   background-color: #C4C4C4;
   border-radius: 50%;
-  margin-left: 85%;
-  margin-bottom: 8px;
-  font-size: 10px;
+  margin-left: 80%;
+  margin-bottom: 10px;
+  font-size: 0.625em;
   text-align: center;
   vertical-align: middle; }
 
 .cardPlayer {
   background: rgba(176, 198, 206, 0.9);
   margin-left: 15px;
+  /* Margin à optimiser */
   margin-right: 15px;
-  margin-bottom: 3px;
+  margin-bottom: 15px;
   line-height: normal;
-  padding-top: 10px;
-  padding-bottom: 10px; }
-  .cardPlayer__one {
+  padding-top: 15px;
+  /* Padding à optimiser */
+  padding-bottom: 15px; }
+  .cardPlayer__one-two {
     background: rgba(56, 54, 169, 0.17);
     text-align: center;
     margin-left: 25%;
     margin-right: 25%;
+    margin-bottom: 10px;
     padding-top: 3px;
+    /* Padding à optimiser */
     padding-bottom: 3px;
-    margin-bottom: 5px;
-    font-size: 18px;
+    font-size: 1.125em;
     border-radius: 45px; }
   .cardPlayer__score {
     width: 40px;
@@ -68,8 +73,42 @@ h1 {
   .cardPlayer__result {
     background: #BE9999;
     text-align: center;
-    margin-top: 5px;
-    font-size: 30px;
+    font-size: 1.85em;
+    margin-top: 10px;
     margin-left: 18%;
     margin-right: 18%;
     border-radius: 25px; }
+
+.ordered__replay, .ordered__rollDice, .ordered__holdPoints, .ordered__pointsObtained {
+  background: rgba(178, 228, 219, 0.5);
+  margin-left: 15px;
+  /* Margin à optimiser */
+  margin-right: 15px;
+  margin-top: 13px;
+  border-radius: 45px;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px; }
+
+.ordered__dice {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  margin-top: 15px; }
+
+.ordered__imgDice {
+  max-width: 100%;
+  max-height: 100%; }
+
+.ordered__pointsObtained {
+  margin-left: 18%;
+  margin-right: 18%; }
+
+.ordered__pointsValue {
+  background: #D96C6C;
+  color: #FFFFFF;
+  border-radius: 45px;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 10px;
+  margin-bottom: 5px; }
