@@ -1,20 +1,61 @@
 /* Mobile-first */
 h1 {
-  font-size: 26px;
+  font-size: 20px;
   text-align: center;
-  padding-top: 15px;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 #rule {
-  width: 50px;
-  line-height: 50px;
-  background-color: #C4C4C4;
+  width: 40px;
+  line-height: 40px;
+  background-color: $grey;
   border-radius: 50%;
-  margin-left: 76%;
-}
-
-.rule-text {
-  font-size: 12px;
+  margin-left: 85%;
+  margin-bottom: 8px;
+  font-size: 10px;
   text-align: center;
   vertical-align: middle;
+}
+
+.cardPlayer {
+  background: $blueGrey210;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 3px;
+  line-height: normal;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &__one {
+    background: $purple200;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    border-radius: 45px;
+  }
+
+  &__score {
+    width: 40px;
+    line-height: 40px;
+    background: $red500;
+    border-radius: 50%;
+    text-align: center;
+    color: $white;
+    margin: 0 auto;
+  }
+
+  &__result {
+    background: $pink200;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 30px;
+    margin-left: 18%;
+    margin-right: 18%;
+    border-radius: 25px;
+  }
 }
