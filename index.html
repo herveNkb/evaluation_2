@@ -106,36 +106,35 @@
   </head>
   <body>
     <h1>Premier qui arrive à 100 !</h1>
-    <div id="rule">
-      Règles
-    </div>
-    <section class="cardPlayer">
-      <div class="cardPlayer__one-two">Joueur 1</div>
-      <div class="cardPlayer__score">XX</div>
-      <div class="cardPlayer__result">Gagné ! ! !</div>
-    </section>
-    <section class="cardPlayer">
-      <div class="cardPlayer__one-two">Joueur 2</div>
-      <div class="cardPlayer__score">XX</div>
-      <div class="cardPlayer__result">Perdu...</div>
-    </section>
-    <section class="ordered">
-      <div class="ordered__replay">Recommencer une partie</div>
-      <div class="ordered__dice">
-        <img class="ordered__imgDice" src="media/img/dédé 6.png" alt="Dé à lancer, positionné sur la face six">
-      </div>
-      <div class="ordered__rollDice">Lancer le dé</div>
-      <div class="ordered__pointsObtained">
-        Points obtenus
-        <div class="ordered__pointsValue">
-          24
+    <div id="rule">Règles</div>
+    <div class="grid-container">
+      <section class="cardPlayer1">
+        <div class="cardPlayer1__one-two">Joueur 1</div>
+        <div class="cardPlayer1__score">XX</div>
+        <div class="cardPlayer1__result">Gagné ! ! !</div>
+      </section>
+      <section class="cardPlayer2">
+        <div class="cardPlayer2__one-two">Joueur 2</div>
+        <div class="cardPlayer2__score">XX</div>
+        <div class="cardPlayer2__result">Perdu...</div>
+      </section>
+      <section class="ordered">
+        <div class="ordered__replay">Recommencer une partie</div>
+        <div class="ordered__dice">
+          <img
+            class="ordered__imgDice"
+            src="media/img/dédé 6.png"
+            alt="Dé à lancer, positionné sur la face six"
+          />
         </div>
-      </div>
-      <div class="ordered__holdPoints">Récupérer les points</div>
-      
-    </section>
-
-
+        <div class="ordered__rollDice">Lancer le dé</div>
+        <div class="ordered__pointsObtained">
+          Points obtenus
+          <div class="ordered__pointsValue">24</div>
+        </div>
+        <div class="ordered__holdPoints">Récupérer les points</div>
+      </section>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
