@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Colors and font-size */
 /* Ordered color */
 /* Rule color */
@@ -36,27 +37,27 @@ h1 {
   text-align: center;
   vertical-align: middle; }
 
-.cardPlayer {
+.cardPlayer1, .cardPlayer2 {
   background: rgba(176, 198, 206, 0.9);
   margin: 0 15px 15px 15px;
   line-height: normal;
   padding: 15px 0 15px 0; }
-  .cardPlayer__one-two {
+  .cardPlayer1__one-two, .cardPlayer2__one-two {
     background: rgba(56, 54, 169, 0.17);
     text-align: center;
     margin: 0 25% 3% 25%;
     padding: 3px 0 3px 0;
     font-size: 1.125em;
     border-radius: 45px; }
-  .cardPlayer__score {
+  .cardPlayer1__score, .cardPlayer2__score {
     width: 40px;
     line-height: 40px;
-    background: #B76161;
+    background: #AC625F;
     border-radius: 50%;
     text-align: center;
     color: #FFFFFF;
     margin: 0 auto; }
-  .cardPlayer__result {
+  .cardPlayer1__result, .cardPlayer2__result {
     background: #BE9999;
     text-align: center;
     font-size: 1.85em;
@@ -91,3 +92,86 @@ h1 {
   color: #FFFFFF;
   border-radius: 45px;
   margin: 3% 35% 1.5% 35%; }
+
+/* Desktop */
+@media screen and (min-width: 700px) {
+  h1 {
+    font-size: 48px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 50px; }
+  #rule {
+    width: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    margin-bottom: 5%;
+    margin-left: 90%;
+    margin-top: -3%; }
+  #rule:hover {
+    animation: bounce 1s; }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+    grid-template-areas: "player1 ordered player2"; }
+  .ordered {
+    grid-area: ordered; }
+  .cardPlayer1, .cardPlayer2 {
+    height: 700px;
+    border-radius: 25px;
+    box-shadow: 8px 5px 14px -11px rgba(0, 0, 0, 0.17);
+    -webkit-box-shadow: 8px 5px 14px -11px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 8px 5px 14px -11px rgba(0, 0, 0, 0.17); }
+    .cardPlayer1__one-two, .cardPlayer2__one-two {
+      margin: 45px 80px 50px 80px;
+      padding: 10px 0 10px 0;
+      font-size: 2.5em; }
+    .cardPlayer1__score, .cardPlayer2__score {
+      width: 150px;
+      line-height: 150px;
+      font-size: 1.8em; }
+    .cardPlayer1__result, .cardPlayer2__result {
+      margin: 50px 60px 70px 60px;
+      font-size: 3.5em;
+      padding: 10px 25px 10px 25px;
+      border-radius: 45px; }
+  .cardPlayer1 {
+    margin-left: 30%; }
+  .cardPlayer2 {
+    margin-right: 30%; }
+  .ordered__replay, .ordered__rollDice, .ordered__holdPoints {
+    margin: 0 80px 0 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 2em; }
+  .ordered__replay {
+    margin-top: 50px; }
+  .ordered__replay:hover {
+    animation: bounce 1s; }
+  .ordered__dice {
+    height: 150px;
+    width: 150px; }
+  .ordered__imgDice {
+    margin-top: 30px; }
+  .ordered__rollDice {
+    margin: 75px 120px 0 120px;
+    font-size: 2.5em; }
+  .ordered__pointsObtained {
+    margin-top: 60px;
+    margin-left: 30%;
+    margin-right: 30%; }
+  .ordered__holdPoints {
+    margin-top: 45px;
+    font-size: 2.5em; } }
+
+/* Effet de rebond pour le bouton "Recommencer une partie" et "Règles" (.ordered__replay - #rule) */
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); } }
