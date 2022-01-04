@@ -15,6 +15,11 @@
   vertical-align: middle;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Begin Modal */
 .modal {
   position: fixed;
@@ -32,6 +37,14 @@
   overflow: auto;
   background-color: $white;
   padding: 30px;
+}
+
+.exitModal {
+  background-color: blanchedalmond;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  margin-left: 80%;
+  border-radius: 45px;
 }
 
 #ruleModal {
@@ -136,6 +149,7 @@ p {
     margin-bottom: 5%;
     margin-left: 90%;
     margin-top: -3%;
+    cursor: pointer;
   }
   
   #rule:hover {
@@ -148,6 +162,15 @@ p {
     max-width: calc(100vw - 20px);
     max-height: calc(100vh - 20px);
     padding: 40px;
+  }
+
+  .exitModal {
+    margin-left: 88%;
+    cursor: pointer;
+  }
+
+  .exitModal:hover {
+    animation: bounce 1s;
   }
 
   #ruleModal {
@@ -221,6 +244,7 @@ p {
       padding-top: 20px;
       padding-bottom: 20px;
       font-size: 2em;
+      cursor: pointer;
     }
 
     &__replay {
