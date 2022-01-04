@@ -105,8 +105,26 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Premier qui arrive à 100 !</h1>
+    <h1 class="title">Premier qui arrive à 100 !</h1>
     <div id="rule">Règles</div>
+    <aside id="modal1" class="modal" style="display:none" aria-hidden="true" role="dialog" aria-labelledby="ruleModal">
+      <div class="modal-wrapper">
+        <h1 id="ruleModal">Règles du jeu</h1>
+        <p>Ce jeu se joue à deux. Le but est d'obtenir le premier le score de 100 points.</p>
+        <p>Pour ce faire, rien de plus simple:<br>
+          cliquez sur "Lancere le dé".<br>
+          Le score ainsi fait s'ajoutera à vos "Points obtenus" juste au dessous
+        </p>
+        <p>Vous pouvez lancer le dé autant de fois que le désirez et ainsi accumuler un maximum de points</p>
+        <p>Toutefois, faite attention:<br>
+          Si vous faite 1, vous perdez tout vos points accumulés dans "Points obtenus" et le tour passe à votre adversaire.
+        </p>
+        <p>Pour éviter cela, cliquez sur "Récupérer les points", afin de valider vos points.<br>
+          Du coup, ça sera à votre adversaire de jouer.
+        </p>
+        <p class="lastPhrasingModal">Bonne partie et que le meilleur gagne!!!</p>
+      </div>
+    </aside>
     <div class="grid-container">
       <section class="cardPlayer1">
         <div class="cardPlayer1__one-two">Joueur 1</div>
