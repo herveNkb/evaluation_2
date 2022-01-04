@@ -9,3 +9,8 @@ const imgDice = document.querySelector('#imgDice');
 const rollDice = document.querySelector('#rollDice');
 const pointsValue = document.querySelector('#pointsValue');
 const holdPoints = document.querySelector('holdPoints');
+
+// Masque le message "Gagnant" ou "Perdant"
+winnerLoser1.style.display = 'none';
+winnerLoser2.style.display = 'none';
+
