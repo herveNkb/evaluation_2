@@ -4,6 +4,10 @@ body {
   background-color: $purpleGrey600;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 700px) {
   body {
      background: linear-gradient(
