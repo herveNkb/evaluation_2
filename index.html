@@ -106,9 +106,12 @@
   </head>
   <body>
     <h1 class="title">Premier qui arrive à 100 !</h1>
-    <div id="rule">Règles</div>
-    <aside id="modal1" class="modal" style="display:none" aria-hidden="true" role="dialog" aria-labelledby="ruleModal">
+    <div id="rule">
+      <a href="#modal1" class="js-modal">Règles</a>
+    </div>
+    <aside id="modal1" class="modal" style="display:none" aria-hidden="true" role="dialog" aria-modal="false" aria-labelledby="ruleModal">
       <div class="modal-wrapper">
+        <div class="exitModal">Fermer</div>
         <h1 id="ruleModal">Règles du jeu</h1>
         <p>Ce jeu se joue à deux. Le but est d'obtenir le premier le score de 100 points.</p>
         <p>Pour ce faire, rien de plus simple:<br>
