@@ -110,29 +110,30 @@
     <div class="grid-container">
       <section class="cardPlayer1">
         <div class="cardPlayer1__one-two">Joueur 1</div>
-        <div class="cardPlayer1__score">XX</div>
-        <div class="cardPlayer1__result">Gagné ! ! !</div>
+        <div id="score1" class="cardPlayer1__score">0</div>
+        <div id="winnerLoser1" class="cardPlayer1__result">Gagné ! ! !</div>
       </section>
       <section class="cardPlayer2">
         <div class="cardPlayer2__one-two">Joueur 2</div>
-        <div class="cardPlayer2__score">XX</div>
-        <div class="cardPlayer2__result">Perdu...</div>
+        <div id="score2" class="cardPlayer2__score">0</div>
+        <div id="winnerLoser2" class="cardPlayer2__result">Perdu...</div>
       </section>
       <section class="ordered">
-        <div class="ordered__replay">Recommencer une partie</div>
+        <div id="replay" class="ordered__replay">Recommencer une partie</div>
         <div class="ordered__dice">
           <img
+            id="imgDice"
             class="ordered__imgDice"
             src="media/img/dédé 6.png"
             alt="Dé à lancer, positionné sur la face six"
           />
         </div>
-        <div class="ordered__rollDice">Lancer le dé</div>
+        <div id="rollDice" class="ordered__rollDice">Lancer le dé</div>
         <div class="ordered__pointsObtained">
           Points obtenus
-          <div class="ordered__pointsValue">24</div>
+          <div id="pointsValue" class="ordered__pointsValue">24</div>
         </div>
-        <div class="ordered__holdPoints">Récupérer les points</div>
+        <div id="holdPoints" class="ordered__holdPoints">Récupérer les points</div>
       </section>
     </div>
     <script src="script.js"></script>
