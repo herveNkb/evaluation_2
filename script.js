@@ -14,3 +14,29 @@ const holdPoints = document.querySelector('holdPoints');
 winnerLoser1.style.display = 'none';
 winnerLoser2.style.display = 'none';
 
+// ---Début pour la modal ou il y à les règles du jeu---
+let modal = null;
+
+const openModal = (e) => {
+  e.preventDefault();
+  const target = document.querySelector(e.target.getAttribute('href'));
+  target.style.display = null;
+  target.removeAttribute('aria-hidden');
+  target.setAttribute('aria-modal', 'true');
+  modal = target;
+  modal.addEventListener('click', closeModal);
+};
+
+const closeModal = (e) => {
+  if (modal === null) return;
+  e.preventDefault();
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+  modal.removeAttribute('aria-modal');
+  modal.removeEventListener('click', closeModal);
+  modal = null;
+};
+
+document.querySelectorAll('.js-modal').forEach((a) => {
+  a.addEventListener('click', openModal);
+});
