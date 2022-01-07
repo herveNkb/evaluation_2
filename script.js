@@ -12,10 +12,10 @@ const holdPoints = document.querySelector('holdPoints');
 const joueur1 = document.querySelector('.cardPlayer1');
 const joueur2 = document.querySelector('.cardPlayer2');
 // Sons
-let audioStartOfGame = new Audio('media/sound/startOfGame.mp3');
-let audioWinner = new Audio('media/sound/winner.mp3');
-let audioDiceRoll = new Audio('media/sound/diceRoll.mp3');
-let audioCollectPoints = new Audio('media/sound/collectPoints.mp3');
+const audioStartOfGame = new Audio('media/sound/startOfGame.mp3');
+const audioWinner = new Audio('media/sound/winner.mp3');
+const audioDiceRoll = new Audio('media/sound/diceRoll.mp3');
+const audioCollectPoints = new Audio('media/sound/collectPoints.mp3');
 // Masque le message "Gagnant" ou "Perdant"
 winnerLoser1.style.display = 'none';
 winnerLoser2.style.display = 'none';
