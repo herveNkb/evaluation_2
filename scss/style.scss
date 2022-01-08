@@ -266,7 +266,7 @@ p {
     }
 
     &__replay {
-      margin-top: 50px;
+      margin-top: 10px;
     }
 
     &__replay:hover {
@@ -276,6 +276,7 @@ p {
     &__dice {
       height: 150px;
       width: 150px;
+      padding-top: 25px;
     }
 
     &__imgDice {
