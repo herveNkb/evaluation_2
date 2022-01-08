@@ -44,6 +44,7 @@ rollDice.addEventListener('click', () => {
     if (nombreGenere == 1) {
       // Si chiffre 1 est généré, le tour passe au joueur 2
       audioFaceDice1.play();
+      audioFaceDice1.volume = 0.3;
       imagesDuDe(nombreGenere);
       score1.textContent = scoreTotalJoueur1;
       pointsValue.textContent = '0';
@@ -54,7 +55,7 @@ rollDice.addEventListener('click', () => {
       setTimeout(() => {
         // Tant que le chiffre 1 ne sort pas, le tour continue
         imagesDuDe(nombreGenere);
-        joueur1.style.backgroundColor = 'red';
+        joueur1.style.backgroundColor = 'rgba(167, 211, 228, 0.9)';
         joueur2.style.backgroundColor = 'rgba(176, 198, 206, 0.45)';
         additionScoreDuDe1 += nombreGenere;
         pointsValue.textContent = additionScoreDuDe1;
@@ -66,6 +67,7 @@ rollDice.addEventListener('click', () => {
       // Si chiffre 1 est généré, le tour passe au joueur 1
       imagesDuDe(nombreGenere);
       audioFaceDice1.play();
+      audioFaceDice1.volume = 0.3;
       score2.textContent = scoreTotalJoueur2;
       pointsValue.textContent = '0';
       additionScoreDuDe2 = 0;
@@ -75,7 +77,7 @@ rollDice.addEventListener('click', () => {
       setTimeout(() => {
         // Tant que le chiffre 1 ne sort pas, le tour continue
         imagesDuDe(nombreGenere);
-        joueur2.style.backgroundColor = 'red';
+        joueur2.style.backgroundColor = 'rgba(167, 211, 228, 0.9)';
         joueur1.style.backgroundColor = 'rgba(176, 198, 206, 0.45)';
         additionScoreDuDe2 += nombreGenere;
         pointsValue.textContent = additionScoreDuDe2;
@@ -88,14 +90,14 @@ rollDice.addEventListener('click', () => {
 holdPoints.addEventListener('click', (a) => {
   if (resultatJoueur1) {
     audioCollectPoints.play();
+    audioCollectPoints.volume = 0.3;
     scoreTotalJoueur1 += additionScoreDuDe1;
     score1.textContent = scoreTotalJoueur1;
     additionScoreDuDe1 = 0;
     pointsValue.textContent = '0';
     if (scoreTotalJoueur1 >= 100) {
-      
-      holdPoints.disabled = false;
         audioWinner.play();
+        audioWinner.volume = 0.5;
         winnerLoser1.style.display = 'block';
      
     } else {
@@ -103,13 +105,14 @@ holdPoints.addEventListener('click', (a) => {
     }
   } else {
     audioCollectPoints.play();
+    audioCollectPoints.volume = 0.3;
     scoreTotalJoueur2 += additionScoreDuDe2;
     score2.textContent = scoreTotalJoueur2;
     additionScoreDuDe2 = 0;
     pointsValue.textContent = '0';
     if (scoreTotalJoueur2 >= 100) {
-      holdPoints.disabled = false;
         audioWinner.play();
+        audioWinner.volume = 0.5;
         winnerLoser2.style.display = 'block';
     
     } else {
