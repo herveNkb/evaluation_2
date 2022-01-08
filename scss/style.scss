@@ -229,7 +229,7 @@ p {
     -moz-box-shadow: 8px 5px 14px -11px rgba(0,0,0,0.17);
 
     &__one-two {
-      margin: 45px 80px 50px 80px;
+      margin: 80px 80px 80px 100px;
       padding: 10px 0 10px 0;
       font-size: 2.5em;
     }
@@ -241,10 +241,21 @@ p {
     }
 
     &__result {
-      margin: 50px 60px 70px 60px ;
+      margin: 80px 60px 70px 60px ;
       font-size: 3.5em;
       padding: 10px 25px 10px 25px;
       border-radius: 45px;
+      -webkit-transform-origin: top center;
+      -ms-transform-origin: top center;
+      transform-origin: top center;
+      -webkit-animation-name: swing;
+      animation-name: swing;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
     }
   }
   .cardPlayer1 {
@@ -301,7 +312,6 @@ p {
   }
 }
 
-
 /* Animation de rebond pour le bouton "Recommencer une partie" et "Règles" (.ordered__replay - #rule) */
 @keyframes bounce {
   0%, 20%, 60%, 100% {
@@ -340,3 +350,49 @@ p {
   from { transform: translateY(0px);}
   to { transform: translateY(50px);}
 }
+
+/* Animation pour le gagnant (.cardPlayer1__result & .cardPlayer2__result) */    
+@-webkit-keyframes swing {
+  20% {
+  -webkit-transform: rotate3d(0, 0, 1, 15deg);
+  transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+  -webkit-transform: rotate3d(0, 0, 1, -10deg);
+  transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+  -webkit-transform: rotate3d(0, 0, 1, 5deg);
+  transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+  -webkit-transform: rotate3d(0, 0, 1, -5deg);
+  transform: rotate3d(0, 0, 1, -5deg);
+  }
+  100% {
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  transform: rotate3d(0, 0, 1, 0deg);
+  }
+  }
+  @keyframes swing {
+  20% {
+  -webkit-transform: rotate3d(0, 0, 1, 15deg);
+  transform: rotate3d(0, 0, 1, 15deg);
+  }
+  40% {
+  -webkit-transform: rotate3d(0, 0, 1, -10deg);
+  transform: rotate3d(0, 0, 1, -10deg);
+  }
+  60% {
+  -webkit-transform: rotate3d(0, 0, 1, 5deg);
+  transform: rotate3d(0, 0, 1, 5deg);
+  }
+  80% {
+  -webkit-transform: rotate3d(0, 0, 1, -5deg);
+  transform: rotate3d(0, 0, 1, -5deg);
+  }
+  100% {
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  transform: rotate3d(0, 0, 1, 0deg);
+  }
+  }
