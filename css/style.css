@@ -80,7 +80,7 @@ p {
 
 /* End Modal */
 .cardPlayer1, .cardPlayer2 {
-  background: rgba(176, 198, 206, 0.9);
+  background: rgba(144, 177, 190, 0.9);
   margin: 0 15px 15px 15px;
   line-height: normal;
   padding: 15px 0 15px 0; }
@@ -221,12 +221,13 @@ p {
     font-size: 2em;
     cursor: pointer; }
   .ordered__replay {
-    margin-top: 50px; }
+    margin-top: 10px; }
   .ordered__replay:hover {
     animation: bounce 1s; }
   .ordered__dice {
     height: 150px;
-    width: 150px; }
+    width: 150px;
+    padding-top: 25px; }
   .ordered__imgDice {
     margin-top: 30px; }
   .ordered__rollDice {
