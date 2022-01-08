@@ -32,7 +32,8 @@ let resultatJoueur2 = 0;
 // Bouton "Recommencer une partie", actualise la page
 orderedReplay.addEventListener('click', () => {
   audioStartOfGame.play();
-  setTimeout(() => { // Laisse le temps à la musique de se jouer avnt le "refresh" de la page
+  setTimeout(() => {
+    // Laisse le temps à la musique de se jouer avnt le "refresh" de la page
     location.reload();
   }, 2600);
 });
@@ -96,10 +97,9 @@ holdPoints.addEventListener('click', (a) => {
     additionScoreDuDe1 = 0;
     pointsValue.textContent = '0';
     if (scoreTotalJoueur1 >= 100) {
-        audioWinner.play();
-        audioWinner.volume = 0.5;
-        winnerLoser1.style.display = 'block';
-     
+      audioWinner.play();
+      audioWinner.volume = 0.5;
+      winnerLoser1.style.display = 'block';
     } else {
       resultatJoueur1 = false;
     }
@@ -111,21 +111,20 @@ holdPoints.addEventListener('click', (a) => {
     additionScoreDuDe2 = 0;
     pointsValue.textContent = '0';
     if (scoreTotalJoueur2 >= 100) {
-        audioWinner.play();
-        audioWinner.volume = 0.5;
-        winnerLoser2.style.display = 'block';
-    
+      audioWinner.play();
+      audioWinner.volume = 0.5;
+      winnerLoser2.style.display = 'block';
     } else {
       resultatJoueur1 = true;
     }
   }
 });
 
-// Fonction pour générer un nombre entier de 1 à 6
+// Fonction pour générer un nombre aléatoire entier de 1 à 6
 function genererNombreEntier() {
   return Math.floor(Math.random() * 6 + 1);
 }
-// Afficher l'image du dé correspondant au résultat de la fonction "genererNombreEntier()"
+// Fonction pour afficher l'image du dé correspondant au résultat de la fonction "genererNombreEntier()"
 function imagesDuDe(nombreAleatoire) {
   if (nombreAleatoire == 1) {
     nombreAleatoire = imgDice.innerHTML = '<img src="media/img/de-1.png">';
