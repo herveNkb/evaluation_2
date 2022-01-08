@@ -8,13 +8,14 @@ const orderedReplay = document.querySelector('#replay');
 const imgDice = document.querySelector('#imgDice');
 const rollDice = document.querySelector('#rollDice');
 const pointsValue = document.querySelector('#pointsValue');
-const holdPoints = document.querySelector('holdPoints');
+const holdPoints = document.querySelector('#holdPoints');
 const joueur1 = document.querySelector('.cardPlayer1');
 const joueur2 = document.querySelector('.cardPlayer2');
 // Sons
 const audioStartOfGame = new Audio('media/sound/startOfGame.mp3');
 const audioWinner = new Audio('media/sound/winner.mp3');
 const audioDiceRoll = new Audio('media/sound/diceRoll.mp3');
+const audioFaceDice1 = new Audio('media/sound/faceDice1.mp3');
 const audioCollectPoints = new Audio('media/sound/collectPoints.mp3');
 // Masque le message "Gagnant" ou "Perdant"
 winnerLoser1.style.display = 'none';
@@ -28,13 +29,21 @@ let additionScoreDuDe1 = 0;
 let additionScoreDuDe2 = 0;
 let resultatJoueur2 = 0;
 
+// Bouton "Recommencer une partie", actualise la page
+orderedReplay.addEventListener('click', () => {
+  audioStartOfGame.play();
+  setTimeout(() => { // Laisse le temps à la musique de se jouer avnt le "refresh" de la page
+    location.reload();
+  }, 2600);
+});
 
 // Bouton "Lancer le dé"
 rollDice.addEventListener('click', () => {
   if (resultatJoueur1) {
     nombreGenere = genererNombreEntier();
-    if (nombreGenere == 1) { // Si chiffre 1 est généré, le tour passe au joueur 2
-      audioCollectPoints.play();
+    if (nombreGenere == 1) {
+      // Si chiffre 1 est généré, le tour passe au joueur 2
+      audioFaceDice1.play();
       imagesDuDe(nombreGenere);
       score1.textContent = scoreTotalJoueur1;
       pointsValue.textContent = '0';
@@ -42,32 +51,69 @@ rollDice.addEventListener('click', () => {
       resultatJoueur1 = false;
     } else {
       audioDiceRoll.play();
-      setTimeout(() => { // Tant que le chiffre 1 ne sort pas, le tour continue
+      setTimeout(() => {
+        // Tant que le chiffre 1 ne sort pas, le tour continue
         imagesDuDe(nombreGenere);
         joueur1.style.backgroundColor = 'red';
         joueur2.style.backgroundColor = 'rgba(176, 198, 206, 0.45)';
-        additionScoreDuDe1 = additionScoreDuDe1 + nombreGenere;
+        additionScoreDuDe1 += nombreGenere;
         pointsValue.textContent = additionScoreDuDe1;
       }, 1000);
     }
   } else {
     nombreGenere = genererNombreEntier();
-    if (nombreGenere == 1) { // Si chiffre 1 est généré, le tour passe au joueur 1
+    if (nombreGenere == 1) {
+      // Si chiffre 1 est généré, le tour passe au joueur 1
       imagesDuDe(nombreGenere);
-      audioCollectPoints.play();
+      audioFaceDice1.play();
       score2.textContent = scoreTotalJoueur2;
       pointsValue.textContent = '0';
       additionScoreDuDe2 = 0;
       resultatJoueur1 = true;
     } else {
-      audioDiceRoll.play(); 
-      setTimeout(() => { // Tant que le chiffre 1 ne sort pas, le tour continue
+      audioDiceRoll.play();
+      setTimeout(() => {
+        // Tant que le chiffre 1 ne sort pas, le tour continue
         imagesDuDe(nombreGenere);
         joueur2.style.backgroundColor = 'red';
         joueur1.style.backgroundColor = 'rgba(176, 198, 206, 0.45)';
-        additionScoreDuDe2 = additionScoreDuDe2 + nombreGenere;
+        additionScoreDuDe2 += nombreGenere;
         pointsValue.textContent = additionScoreDuDe2;
       }, 1000);
+    }
+  }
+});
+
+// Bouton "Récupérer les points"
+holdPoints.addEventListener('click', (a) => {
+  if (resultatJoueur1) {
+    audioCollectPoints.play();
+    scoreTotalJoueur1 += additionScoreDuDe1;
+    score1.textContent = scoreTotalJoueur1;
+    additionScoreDuDe1 = 0;
+    pointsValue.textContent = '0';
+    if (scoreTotalJoueur1 >= 100) {
+      
+      holdPoints.disabled = false;
+        audioWinner.play();
+        winnerLoser1.style.display = 'block';
+     
+    } else {
+      resultatJoueur1 = false;
+    }
+  } else {
+    audioCollectPoints.play();
+    scoreTotalJoueur2 += additionScoreDuDe2;
+    score2.textContent = scoreTotalJoueur2;
+    additionScoreDuDe2 = 0;
+    pointsValue.textContent = '0';
+    if (scoreTotalJoueur2 >= 100) {
+      holdPoints.disabled = false;
+        audioWinner.play();
+        winnerLoser2.style.display = 'block';
+    
+    } else {
+      resultatJoueur1 = true;
     }
   }
 });
@@ -92,20 +138,6 @@ function imagesDuDe(nombreAleatoire) {
     nombreAleatoire = imgDice.innerHTML = '<img src="media/img/de-6.png">';
   }
 }
-
-
-
-
-
-
-
-
-
-// Bouton "Recommencer une partie", actualise la page
-orderedReplay.addEventListener('click', () => {
-  location.reload();
-  // audioStartOfGame.play(); // Le son ne fonctionne pas quand je reactualise la page
-});
 
 // ---Début pour la modal ou il y a les règles du jeu---
 let modal = null;
