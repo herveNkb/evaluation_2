@@ -17,7 +17,7 @@ const audioWinner = new Audio('media/sound/winner.mp3');
 const audioDiceRoll = new Audio('media/sound/diceRoll.mp3');
 const audioFaceDice1 = new Audio('media/sound/faceDice1.mp3');
 const audioCollectPoints = new Audio('media/sound/collectPoints.mp3');
-// Masque le message "Gagnant" ou "Perdant"
+// Masque l'animation et le message "Gagné ! ! !"
 winnerLoser1.style.display = 'none';
 winnerLoser2.style.display = 'none';
 
@@ -38,8 +38,12 @@ orderedReplay.addEventListener('click', () => {
   }, 2600);
 });
 
-// Bouton "Lancer le dé"
-rollDice.addEventListener('click', () => {
+// Événements pour pouvoir jouer la partie
+rollDice.addEventListener('click', rolling);
+holdPoints.addEventListener('click', collectPoints);
+
+// Fonction pour "Lancer le dé"
+function rolling() {
   if (resultatJoueur1) {
     nombreGenere = genererNombreEntier();
     if (nombreGenere == 1) {
@@ -85,10 +89,10 @@ rollDice.addEventListener('click', () => {
       }, 1000);
     }
   }
-});
+}
 
-// Bouton "Récupérer les points"
-holdPoints.addEventListener('click', (a) => {
+// Fonction pour "Récupérer les points"
+function collectPoints() {
   if (resultatJoueur1) {
     audioCollectPoints.play();
     audioCollectPoints.volume = 0.3;
@@ -118,12 +122,13 @@ holdPoints.addEventListener('click', (a) => {
       resultatJoueur1 = true;
     }
   }
-});
+}
 
 // Fonction pour générer un nombre aléatoire entier de 1 à 6
 function genererNombreEntier() {
   return Math.floor(Math.random() * 6 + 1);
 }
+
 // Fonction pour afficher l'image du dé correspondant au résultat de la fonction "genererNombreEntier()"
 function imagesDuDe(nombreAleatoire) {
   if (nombreAleatoire == 1) {
